@@ -3,53 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tunea tu Bajada</title>
-    <link rel="shortcut icon" href="/img/estadisticas/img-5.png" type="image/x-icon">
+    <title>Game Store</title>
+    <link rel="shortcut icon" href="/img/logofoot.png" type="image/x-icon">
     <link rel="stylesheet" href="../bootstrap/bootstrap-icons/bootstrap-icons.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/page.css">
+    <link rel="stylesheet" href="../css/Acerca_de.css">
 </head>
 
-<body style="background-image: url('/img/bag/faq-bg.png');">
+<body class="bg-black text-white">
     <div th:replace="~{/fragmentos/cliente/header :: div}"></div>
     <!-- nosotros -->
     <div class="relative">
         <div>
-            <img src="img/nosotros/blog-2.jpg" alt="">
-            <p class="absolute inset-0 flex justify-center font-bold items-center text-white text-7xl bg-opacity-75 z-10">
-                NOSOTROS</p>
+            <img src="img/nosotros/bg-2.jpg" alt="">
         </div>
     </div>
     <br><br><br>
-    <div class="flex w-full  justify-around flex-wrap">
-        <div class="text-center mt-auto mb-auto ">
-            <h1 class="text-red-700 font-bold  text-3xl">NUESTRA MISION</h1><br>
-            <p class="max-w-96">Redefinir la experiencia de comida rápida ofreciendo a nuestros clientes 
-                la posibilidad de crear hamburguesas personalizadas 
-                completamente únicas. Nos comprometemos a proporcionar 
-                ingredientes frescos y de calidad, un servicio excepcional 
-                y una plataforma tecnológica intuitiva.</p>
-        </div>
-        <div class="text-center mt-auto mb-auto">
-            <h1 class="text-red-700 font-bold text-3xl">NUESTRA VISION</h1><br>
-            <p class="max-w-96">Convertirnos en el destino preferido para los amantes de las hamburguesas, 
-                juntando la tecnología para ofrecer experiencias únicas. Asimismo, expandir nuestra presencia 
-                a nivel nacional y ser reconocidos como líderes en innovación.</p>
+    <!-- Shopping Cart -->
+    <div class="shopping-cart section">
+        <div class="w-full">
+            <div class="row">
+                <div class="col-12">
+
+                    <section class="gog-section">
+                        <h1>Seleccionando a mano lo mejor en juegos</h1>
+                        <p>Una selección de excelentes juegos sin DRM, desde éxitos modernos hasta clásicos de todos los tiempos, que realmente no debes perderte.</p>
+
+                        <div class="features">
+                            <div class="feature">
+                                <img src="img/logofoot.png" alt="Una selección curada de juegos" class="icon-a">
+                                <h2>Una selección curada de juegos</h2>
+                                <p>Desde títulos AAA excepcionales y juegos independientes únicos hasta lo mejor de los juegos clásicos. Todos los juegos están aquí porque los elegimos para ti.</p>
+                            </div>
+
+                            <div class="feature">
+                                <img src="img/logofoot.png" alt="Alimentando a tu coleccionista interior" class="icon-a">
+                                <h2>Alimentando a tu coleccionista interior</h2>
+                                <p>Ofrecer juegos con la mayor cantidad de elementos adicionales posible es el estilo de Game Store, incluso si eso significa explorar nuestros sótanos y títulos olvidados hace mucho tiempo.</p>
+                            </div>
+
+                            <div class="feature">
+                                <img src="img/logofoot.png" alt="Respetando a los creadores de juegos" class="icon-a">
+                                <h2>Respetando a los creadores de juegos</h2>
+                                <p>Cuando estás con nosotros, puedes estar seguro de que todos los juegos son legítimos y que tus compras apoyan a los propietarios y creadores legítimos.</p>
+                            </div>
+
+                            <div class="feature">
+                                <img src="img/logofoot.png" alt="Actualizando los clásicos para el presente" class="icon-a">
+                                <h2>Actualizando los clásicos para el presente</h2>
+                                <p>Incluso si el juego es más antiguo que tú, lo probamos exhaustivamente, corregimos todos los errores y aplicamos parches para que funcione perfectamente en tu PC de próxima generación y en los sistemas operativos modernos.</p>
+                            </div>
+
+                            <div class="feature">
+                                <img src="img/logofoot.png" alt="Cada juego merece brillar" class="icon-a">
+                                <h2>Cada juego merece brillar</h2>
+                                <p>Así como ponemos mucha atención en seleccionar grandes juegos, lo mismo ocurre en destacarlos en Game Store: tratamos cada lanzamiento como una celebración.</p>
+                            </div>
+                        </div>
+
+                    </section>
+
+                </div>
+            </div>
         </div>
     </div>
-    <br><br>
-    
-    <div class="flex w-full justify-around flex-wrap ">
-        <div class=" text-center mt-auto mb-auto ">
-            <p class="max-w-96 font-serif text-2xl">“En el fogón se conjuran las sangres. En el fogón cantan los pueblos.
-                 En el fogón se funden las historias individuales y colectivas. En el fogón se gesta la vida, se cohesionan
-                  los elementos. En el fogón se promueve el diálogo, se confrontan los elementos, se atraen los opuestos”
-            </p>
-        </div>
-    </div>
-    <br><br> 
-    <br><br> <br><br>   
+
+
+    <!--/ End Shopping Cart -->
+    <br>
     <div th:replace="~{/fragmentos/cliente/footer :: div}"></div>
 
     <div id="modal_barra_lateral" class="hidden fixed w-screen h-screen flex z-1 top-0  ">
