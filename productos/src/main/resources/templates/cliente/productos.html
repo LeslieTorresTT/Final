@@ -3,28 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tunea tu Bajada</title>
-    <link rel="shortcut icon" href="/img/estadisticas/img-5.png" type="image/x-icon">
+    <title>Game Store</title>
+    <link rel="shortcut icon" href="/img/logofoot.png" type="image/x-icon">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/page.css">
     <link rel="stylesheet" href="../css/alerta.css">
     <link rel="stylesheet" href="../bootstrap/bootstrap-icons/bootstrap-icons.css">
-    <!-- Font Awesome-->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
 </head>
-<body style="background-image: url('/img/bag/faq-bg.png');">
+<body>
     <div th:replace="~{/fragmentos/cliente/header :: div}"></div>
+
         <br>
         <!-- CATEGORIAS -->
-        <h1 class="flex justify-center text-3xl font-bold mb-3">PERSONALIZACION</h1>
+        <h1 class="flex justify-center text-3xl font-bold mb-3 font-poppins font-bold">CATEGORIAS</h1>
         <div class="category">
             <div class="flex justify-center gap-6 flex-wrap">
-                <button class="text-sm border rounded px-4 py-2 bg-orange-700 hover:bg-orange-900 text-white" data-categoria="Panes">Panes</a></button>
-                <button class="text-sm border rounded px-4 py-2 bg-orange-700 hover:bg-orange-900 text-white" data-categoria="Carnes">Carnes</a></button>
-                <button class="text-sm border rounded px-4 py-2 bg-orange-700 hover:bg-orange-900 text-white" data-categoria="Adicionales">Adicionales</a></button>
-                <button class="text-sm border rounded px-4 py-2 bg-orange-700 hover:bg-orange-900 text-white" data-categoria="Bebidas">Bebidas</a></button>
-                <button class="text-sm border rounded px-4 py-2 bg-orange-700 hover:bg-orange-900 text-white" data-categoria="Recomendado">Recomendado</a></button>
+                <button class="text-sm border rounded px-4 py-2 bg-red-700  hover:bg-red-900 text-white" data-categoria="Aventura">Aventura</a>
+                <button class="text-sm border rounded px-4 py-2 bg-red-700  hover:bg-red-900 text-white" data-categoria="Roles">Roles</a>
+                <button class="text-sm border rounded px-4 py-2 bg-red-700  hover:bg-red-900 text-white" data-categoria="Multijugador">Multijugador</a>
+                <button class="text-sm border rounded px-4 py-2 bg-red-700  hover:bg-red-900 text-white" data-categoria="Accion">Acción</a>
+                <button class="text-sm border rounded px-4 py-2 bg-red-700  hover:bg-red-900 text-white" data-categoria="Recomendado">Peleas</a>
             </div>
         </div>
         
@@ -61,8 +61,8 @@
                             </div>
                             
                            <div class="flex w-full relative ">                          
-                            <a th:href="@{/cliente/agregar/carrito/{id_producto}(id_producto=${producto.id_producto})}" class="button-6 w-full bottom-0" th:if="${producto.cantidad_stock > 0}"> <span class=" flex justify-center gap-2" >Agregar  <i class="bi bi-bag"></i></span></a>
-                            <a   class="bg-orange-800 text-white border rounded shadow-sm mt-auto mb-auto px-2 py-2 w-full  block"  th:unless="${producto.cantidad_stock > 0}"> <span class=" flex justify-center gap-2 cursor-not-allowed">Agotado  <i class="bi bi-x-circle mt-auto mb-auto"></i></span></a>
+                            <a th:href="@{/cliente/agregar/carrito/{id_producto}(id_producto=${producto.id_producto})}" class="bg-red-700  button-6 w-full bottom-0" th:if="${producto.cantidad_stock > 0}"> <span class=" flex justify-center gap-2" >Agregar  <i class="bi bi-bag"></i></span></a>
+                            <a   class="bg-red-700  text-white border rounded shadow-sm mt-auto mb-auto px-2 py-2 w-full  block"  th:unless="${producto.cantidad_stock > 0}"> <span class=" flex justify-center gap-2 cursor-not-allowed">Agotado  <i class="bi bi-x-circle mt-auto mb-auto"></i></span></a>
 
                         </div>
                         </div>
@@ -73,8 +73,8 @@
         
         <a id="btn_carrito" class="cursor-pointer fixed bottom-6 right-6 border bg-white px-5 py-2 rounded-full cursor-pointer shadow-[0_0px_10px_2px_rgba(210,210,210,1)]">
             <div class="relative mt-4">
-                <span class="absolute -top-3 -right-2 text-sm  rounded-full px-1 bg-rose-900 text-white" th:text="${session.cantCarrito}"> </span>
-                <i class="fa fa-shopping-cart text-2xl"></i>
+                <span class="absolute -top-3 -right-2 text-sm  rounded-full px-1 bg-rose-900 text-white" th:text="${session.cantCarrito}"> </span>        
+                <i class="text-2xl bi-bag-dash"></i>
             </div>
         </a>
 
@@ -98,8 +98,8 @@
                             <a th:href="@{/cliente/eliminar/producto/carrito/{id_producto}(id_producto=${carrito.id_producto})}"><i class="bi bi-trash"></i></a>
                         </div>
                     </div>
-                          
-                    <!-- Repite este bloque para cada elemento en el carrito -->
+
+                    <!--  vRepite este bloque para cada elemento en el carrito -->
                 </div>
                 <div class="flex justify-end font-bold">
                     <a href="/cliente/limpiar"><i class="bi bi-trash"></i></a>
@@ -125,8 +125,8 @@
                     </div>
                     <div class="flex gap-2 text-center">
                         <a id="cerrar_carrito" class="cursor-pointer  px-4 py-2 bg-neutral-950 text-white rounded-md">Cerrar</a>
-                        <a href="/cliente/mostrar/compra" class="px-4 py-2 bg-orange-500 text-white rounded-md w-full" th:unless="${session.IdUsuario == null}">continuar comprar <i class="bi bi-bag-check"></i></a>
-                        <a class="px-4 py-2 bg-orange-300 text-white rounded-md w-full cursor-not-allowed" th:if="${session.IdUsuario == null}">continuar compra <i class="bi bi-bag-check"></i></a>
+                        <a href="/cliente/mostrar/compra" class="px-4 py-2 bg-red-500 text-white rounded-md w-full" th:unless="${session.IdUsuario == null}">continuar comprar <i class="bi bi-bag-check"></i></a>
+                        <a class="px-4 py-2 bg-red-300 text-white rounded-md w-full cursor-not-allowed" th:if="${session.IdUsuario == null}">continuar compra <i class="bi bi-bag-check"></i></a>
 
                     </div>
                 </div>
@@ -206,7 +206,7 @@
         <!-- Sidebar -->
         <div class="w-80 h-full bg-white text-black p-4 border rounded">
                 <div class="flex justify-between">
-                    <a href="/" class="flex gap-2"><img class="w-12" src="/img/estadisticas/img-5.png" alt=""> <span class="mb-auto mt-auto">Tunea tu Bajada</span> </a>
+                    <a href="/" class="flex gap-2"><img class="w-12" src="/img/logofoot.png" alt=""> <span class="mb-auto mt-auto">Game Store</span> </a>
                     <a id="cerrar_ventana_modal" class="mb-auto mt-auto cursor pointer">X</a>                    
                 </div>
 

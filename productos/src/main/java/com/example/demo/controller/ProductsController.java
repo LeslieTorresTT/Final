@@ -16,7 +16,7 @@ public class ProductsController {
 
     @GetMapping("/")
     public String products(){
-        return "web/index";
+        return "web/productos";
     }
 
     @Autowired

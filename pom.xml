@@ -54,7 +54,7 @@
 	<modules>
 		<module>gateway</module>
 		<module>inicio</module>
-		<module>usuarios</module>
+		<module>Login</module>
 		<module>productos</module>
 		<module>ordenes</module>
 	</modules>
