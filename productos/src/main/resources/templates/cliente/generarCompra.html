@@ -35,7 +35,7 @@
                                         </div>
                                         <div class="text-sm w-80 mt-4 mb-4">
                                             <span th:text="${carrito.nombre_producto}" class="block text-center text-2xl"></span><br>
-                                            <button type="button" class="px-4 py-2 bg-orange-500 text-white rounded-md" th:attr="onclick=|addIngredient('${carrito.nombre_producto}')|">Previsualización</button>
+                                            <button type="button" class="px-4 py-2 bg-red-500 text-white rounded-md" th:attr="onclick=|addIngredient('${carrito.nombre_producto}')|">Previsualización</button>
                                         </div>
                                     </td>
                                     <td class="text-sm px-4 py-2 ">
@@ -67,7 +67,7 @@
                             <span th:text="'S/' + ${session.igv}"  class="font-bold"></span>
                         </div>               
                         <div class=" w-full mb-2">                   
-                                <p class="flex gap-2">Datos Delivery <span class="text-sm font-bold mt-auto mb-auto"> (*informacion exacta*)</span> </p>                   
+                                <p class="flex gap-2">Distrito <span class="text-sm font-bold mt-auto mb-auto"> (*informacion real*)</span> </p>
                                     <!--ciudad  -->
                                     <select id="miSelect" class="w-full outline-none border shadow-sm px-3 py-2 text-sm mb-2" name="ubicacion" required></select>    
                                     <input type="text" class="w-full outline-none border shadow-sm px-3 py-2 text-sm" placeholder="Direccion...."  name="referencia" required>                 
@@ -77,7 +77,7 @@
                             <span th:text="'S/' + ${session.PrecioFinal}" class="font-bold"></span>
                         </div>
                         <div class="flex gap-2 text-center">
-                            <button type="submit" class="px-4 py-2 bg-orange-500 text-white rounded-md w-full">Comprar</button>
+                            <button type="submit" class="px-4 py-2 bg-red-500 text-white rounded-md w-full">Comprar</button>
                             <a href="/cliente/productos" class="px-4 py-2 bg-gray-900 text-white rounded-md w-full" >Regresar <i class="bi bi-ban"></i></a>
                         </div>
         

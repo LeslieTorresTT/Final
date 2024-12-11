@@ -5,8 +5,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Administrador || Usuarios</title>
-    <link rel="shortcut icon" href="/img/estadisticas/img-5.png" type="image/x-icon">
+    <title>Game Store || Usuarios</title>
+    <link rel="shortcut icon" href="/img/logofoot.png" type="image/x-icon">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="/css/main.css">
     <!-- Font Awesome-->
@@ -24,132 +24,130 @@
 
     <!-- body -->
     <div class="flex justify-between">
-        <!-- menu lateral -->
-        <div th:replace="~{/fragmentos/administrador/menu_lateral :: div}"></div>
-        <!-- body main -->
-        <div class="main_dashboard w-screen h-screen mt-4  overflow-y-auto ml-6 mr-6">
-            <div class="mt-4 cards_flex flex gap-4  justify-center w-full flex-wrap">
-                <div class="w-64 h-24 border-sm rounded shadow-[0px_1px_6px_6px_rgba(10,0,0,0.05)]" >
-                    <div class="flex justify-between w-ful p-5">
-                        <div class="">
-                            <span class="block text-xl">usuarios</span>
+        <div class="main_dashboard w-full h-screen mt-4 overflow-y-auto px-6 bg-black text-gray-200">
+            <div th:replace="~{/fragmentos/administrador/menu_lateral :: div}"></div>
+            <!-- Statistics cards -->
+            <div class="mt-4 flex flex-wrap gap-4 justify-center w-full">
+                <!-- Card: VideoJuegos -->
+                <div class="w-64 h-24 border-4 border-[rgb(255,0,0)] border-double rounded shadow-md bg-gradient-to-r from-gray-700 via-gray-800 to-gray-900">
+                    <div class="flex justify-between w-full p-5">
+                        <div>
+                            <span class="block text-xl">Usuarios</span>
                             <span class="text-sm" th:text="${cantUsuarios}"></span>
                         </div>
-                        <div class="text-5xl ">
-                            <img src="/img/estadisticas/img-1.png" alt="" class="w-12 h-12">
+                        <div class="text-5xl">
+                            <img src="/img/estadisticas/icon_game_1.png" alt="" class="w-12 h-12">
                         </div>
                     </div>
                 </div>
-                <div class="w-64 h-24 border-sm rounded shadow-[0px_1px_6px_6px_rgba(10,0,0,0.05)]" >
+                <div class="w-64 h-24 border-4 border-[rgb(255,0,0)] border-double rounded shadow-md bg-gradient-to-r from-gray-700 via-gray-800 to-gray-900">
                     <div class="flex justify-between w-ful p-5">
-                        <div class="">
-                            <span class="block text-xl">administradores</span>
-                            <span class="text-sm"  th:text="${cantUsuarios}"></span>
+                        <div>
+                            <span class="block text-xl">Administradores</span>
+                            <span class="text-sm" th:text="${cantUsuarios}"></span>
                         </div>
-                        <div class="text-5xl ">
-                            <img src="/img/estadisticas/img-1.png" alt="" class="w-12 h-12">
+                        <div class="text-5xl">
+                            <img src="/img/estadisticas/icon_suspem_1.png" alt="" class="w-12 h-12">
                         </div>
                     </div>
                 </div>
-                <div class="w-64 h-24 border-sm rounded shadow-[0px_1px_6px_6px_rgba(10,0,0,0.05)]" >
+                <div class="w-64 h-24 border-4 border-[rgb(255,0,0)] border-double rounded shadow-md bg-gradient-to-r from-gray-700 via-gray-800 to-gray-900">
                     <div class="flex justify-between w-ful p-5">
-                        <div class="">
-                            <span class="block text-xl">compras</span>
-                            <span class="text-sm text-green-700">+ 30</span>
+                        <div>
+                            <span class="block text-xl">Compras</span>
+                            <span class="text-sm text-green-400">+ 30</span>
                         </div>
-                        <div class="text-5xl ">
-                            <img src="/img/estadisticas/img-1.png" alt="" class="w-12 h-12">
+                        <div class="text-5xl">
+                            <img src="/img/estadisticas/icon_envio_1.png" alt="" class="w-12 h-12">
                         </div>
                     </div>
                 </div>
-                <div class="w-64 h-24 border-sm rounded shadow-[0px_1px_6px_6px_rgba(10,0,0,0.05)]" >
+                <div class="w-64 h-24 border-4 border-[rgb(255,0,0)] border-double rounded shadow-md bg-gradient-to-r from-gray-700 via-gray-800 to-gray-900">
                     <div class="flex justify-between w-ful p-5">
-                        <div class="">
+                        <div>
                             <span class="block text-xl">Consumo</span>
-                            <span class="text-sm text-green-700 font-bold" >+ S/ 6978.0</span>
+                            <span class="text-sm text-green-400 font-bold">+ S/ 6978.0</span>
                         </div>
-                        <div class="text-5xl ">
-                            <img src="/img/estadisticas/img-6.png" alt="" class="w-12 h-12">
+                        <div class="text-5xl">
+                            <img src="/img/estadisticas/icon_coin_2.png" alt="" class="w-12 h-12">
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="w-full border   p-6 shadow-inner rounded overflow-y-auto mt-4">
-                <div class="flex justify-between flex-wrap mb-2 ">
-                    <a id="agregar" class="border rounded  mt-auto mb-auto px-4 py-2 bg-sky-600 text-white hover:bg-sky-900 mb-2 shadow" ><i class="bi fa fa-folder-plus"></i>
-                        <span>Agregar item</span></a>
-                    <a class="bg-sky-600 w-256 rounded mb-2">
-                        <div class="flex w-full mt-auto mb-auto p-1 gap-2 ">
-                            <input type="search" class="w-full outline-none px-2 text-gray-950 text-sm" onkeyup="buscarTabla()" id="searchInput" placeholder="BuscarProducto ..... ">
-                            <i class="fas fa-search text-2xl text-white"></i>
+            <!-- Tabla -->
+            <div class="w-full border border-red-500 p-6 shadow-inner rounded bg-gradient-to-r from-gray-800 via-gray-700 to-gray-800 overflow-y-auto mt-4">
+                <div class="flex justify-between flex-wrap mb-2">
+                    <a id="agregar" class="border rounded px-4 py-2 bg-red-500 text-white hover:bg-red-700 mb-2 shadow">
+                        <i class="bi fa fa-folder-plus"></i> <span>Agregar item</span>
+                    </a>
+                    <div class="bg-gray-700 rounded flex w-full max-w-md p-1 gap-2">
+                        <div class="flex w-full mt-auto mb-auto p-1 gap-2">
+                            <input
+                                    type="search"
+                                    class="w-full outline-none px-2 bg-gray-800 text-gray-200 text-sm placeholder-gray-500"
+                                    onkeyup="buscarTabla()"
+                                    id="searchInput"
+                                    placeholder="Buscar Producto..... ">
+                            <i class="fas fa-search text-2xl text-red-600"></i>
                         </div>
                     </a>
                 </div>
-                <table class="w-full border-collapse " id="miTabla">
+                <table class="w-full border-collapse text-gray-300">
                     <thead>
-                    <tr class="border-b-2 border_color text-center font-bold">
-                        <td class="p-4  ">
-                            <div class="flex ">
+                    <tr class="border-b-2 border-red-600 bg-gradient-to-r from-gray-700 via-gray-800 to-gray-900 text-center font-bold">
+                        <td class="p-4">
+                            <div class="flex">
                                 <span>Codigo</span> <i class="bi bi-chevron-expand"></i>
                             </div>
                         </td>
-                        <td class="p-4 ">
+                        <td class="p-4">
                             <div class="flex"><span>Nombre</span> <i class="bi bi-chevron-expand"></i></div>
                         </td>
-                        <td class="p-4 ">
-                            <div class="flex"><span>Apellido</span> <i class="bi bi-chevron-expand"></i>
-                            </div>
+                        <td class="p-4">
+                            <div class="flex"><span>Apellido</span> <i class="bi bi-chevron-expand"></i></div>
                         </td>
-                        <td class="p-4 ">
-                            <div class="flex">
-                                <span>Correo</span> <i class="bi bi-chevron-expand"></i>
-                            </div>
+                        <td class="p-4">
+                            <div class="flex"><span>Correo</span> <i class="bi bi-chevron-expand"></i></div>
                         </td>
-                        <td class="p-4 ">
-                            <div class="flex"><span>Telefono</span> <i class="bi bi-chevron-expand"></i>
-                            </div>
+                        <td class="p-4">
+                            <div class="flex"><span>Telefono</span> <i class="bi bi-chevron-expand"></i></div>
                         </td>
-                        <td class="p-4 ">
-                            <div class="flex"><span>Rol Usuario</span> <i class="bi bi-chevron-expand"></i>
-                            </div>
+                        <td class="p-4">
+                            <div class="flex"><span>Rol Usuario</span> <i class="bi bi-chevron-expand"></i></div>
                         </td>
-                        <td class="p-4 ">
-                            <div class="flex"><span>Accion</span> <i class="bi bi-chevron-expand"></i>
-                            </div>
+                        <td class="p-4">
+                            <div class="flex"><span>Accion</span> <i class="bi bi-chevron-expand"></i></div>
                         </td>
                     </tr>
                     </thead>
                     <tbody th:each="listaUsuario : ${listaUsuario}">
-
-                    <tr class="border-b border_color  text-sm">
+                    <tr class="border-b border-gray-500 text-sm hover:bg-gray-700">
                         <td class="p-4" th:text="${listaUsuario.numero_documento}"></td>
                         <td class="p-4" th:text="${listaUsuario.nombre}"></td>
                         <td class="p-4" th:text="${listaUsuario.primer_apellido}"></td>
                         <td class="p-4" th:text="${listaUsuario.correo}"></td>
                         <td class="p-4" th:text="${listaUsuario.telefono}"></td>
-                        <td class="p-4"  th:switch="${listaUsuario.id_rol}">
+                        <td class="p-4" th:switch="${listaUsuario.id_rol}">
                             <a th:case="1">CLIENTE</a>
                             <a th:case="2">ADMINISTRADOR</a>
                         </td>
                         <td class="p-4">
                             <a th:href="@{/administrador/editar/usuario/{id_usuario}(id_usuario=${listaUsuario.id_usuario})}"
-                               class="cursor-pointer rounded px-4 shadow-sm py-2 border bg-orange-600 text-white hover:bg-orange-900">
+                               class="cursor-pointer rounded px-4 shadow-sm py-2 border bg-red-500 text-white hover:bg-red-700">
                                 <i class="fas fa-pencil-alt"></i>
                             </a>
                             <a th:href="@{/administrador/eliminar/usuario/{id_usuario}(id_usuario=${listaUsuario.id_usuario})}"
-                               class="cursor-pointer rounded px-4 shadow-sm py-2 border bg-red-600 text-white hover:bg-orange-900">
+                               class="cursor-pointer rounded px-4 shadow-sm py-2 border bg-red-700 text-white hover:bg-red-900">
                                 <i class="fas fa-trash-alt"></i>
                             </a>
                         </td>
                     </tr>
-
                     </tbody>
                 </table>
             </div>
-
-            <br> <br> <br> <br> <br>
         </div>
     </div>
+
 
 </div>
 
